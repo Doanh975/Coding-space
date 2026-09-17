@@ -1,0 +1,26 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compile & Run",
+      "type": "shell",
+      "command": "g++ -std=c++17 -O2 -Wall -o ${fileDirname}/${fileBasenameNoExtension} ${file} && ${fileDirname}/${fileBasenameNoExtension}",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Compile Only",
+      "type": "shell",
+      "command": "g++ -std=c++17 -O2 -Wall -o ${fileDirname}/${fileBasenameNoExtension} ${file}",
+      "group": "build",
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}

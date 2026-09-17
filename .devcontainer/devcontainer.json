@@ -1,0 +1,31 @@
+{
+  "name": "Competitive Programming - C++",
+  "image": "mcr.microsoft.com/devcontainers/cpp:1-ubuntu-22.04",
+
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {}
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cpptools-extension-pack",
+        "formulahendry.code-runner"
+      ],
+      "settings": {
+        "code-runner.executorMap": {
+          "cpp": "cd $dir && g++ -std=c++17 -O2 -Wall -o $fileNameWithoutExt $fileName && ./$fileNameWithoutExt"
+        },
+        "code-runner.runInTerminal": true,
+        "code-runner.saveFileBeforeRun": true,
+        "editor.formatOnSave": false,
+        "files.trimTrailingWhitespace": true
+      }
+    }
+  },
+
+  "postCreateCommand": "g++ --version && echo 'Môi trường sẵn sàng!'",
+
+  "remoteUser": "vscode"
+}
